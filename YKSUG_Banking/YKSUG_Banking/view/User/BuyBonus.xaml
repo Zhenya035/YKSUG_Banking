@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YKSUG_Banking.view.User.BuyBonus">
+    
+    <StackLayout>
+        <Frame Margin="10" CornerRadius="20" HeightRequest="132">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#aa0188B2"
+                                      Offset="0.0" />
+                        <GradientStop Color="#46005d"
+                                      Offset="1.0" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout>
+                    
+                    <Label x:Name="cardNumber" Text="" TextColor="white" FontSize="16" FontFamily="Arial" />
+                    
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 15, 0, 15">
+                        <Label x:Name="amount" Text="" TextColor="White" FontFamily="Arial" FontSize="20" />
+                        <Label Text="$" TextColor="White" FontFamily="Arial" FontSize="20" />
+                    </StackLayout>
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="End">
+                            <Label Text="Card holder" TextColor="#aaa"/>
+                            <Label x:Name="username" Text="" TextColor="White" FontFamily="Arial"/>    
+                        </StackLayout>
+                        
+                        <Image Grid.Column="1" Source="logo.png" HorizontalOptions="End" VerticalOptions="End" HeightRequest="70" WidthRequest="70"></Image>
+                    </Grid>
+                    
+                </StackLayout>
+        </Frame>
+        
+        <Frame BackgroundColor="#880f1617" CornerRadius="20" Margin="10" Padding="10" x:Name="Bought">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="Name:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Grid.Column="1" x:Name="name" TextColor="White" FontSize="15"/>
+                </Grid>
+        
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="Description:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Grid.Column="1" x:Name="description" TextColor="White" FontSize="15"/>
+                </Grid>
+        
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="Price: " TextColor="White" FontSize="15" FontAttributes="Bold"/>
+                    <Label Grid.Column="1" x:Name="price" TextColor="White" FontSize="15"/>    
+                </Grid>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="Amount:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Grid.Column="1" x:Name="amountBonuses" TextColor="White" FontSize="15"/>
+                </Grid>
+                
+            </StackLayout>
+        </Frame>
+        
+        <Button Text="Buy" Clicked="Buy" CornerRadius="40" Margin="10,0,10,0"
+                TextColor="White" BackgroundColor="#aa395462"/>
+        
+    </StackLayout>
+    
+</ContentPage>
