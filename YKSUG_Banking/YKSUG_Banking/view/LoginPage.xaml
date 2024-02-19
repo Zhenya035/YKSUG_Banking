@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YKSUG_Banking.view.LoginPage">
+    
+    <StackLayout>
+        <Label Text="Authentication" HorizontalOptions="Center" FontSize="Large" Margin="0,200,0, 0" TextColor="White" />
+        <Label Text="Enter your username and password" HorizontalOptions="Center" TextColor="White" />
+            
+        <Frame CornerRadius="20" Margin="30, 30, 30,10" Padding="3" BackgroundColor="#880f1617" >
+            <Entry x:Name="UserNameField" Text="" Placeholder="USERNAME" TextColor="White"
+                   PlaceholderColor="White" FontSize="15" />
+        </Frame>
+            
+        <Frame CornerRadius="20" Margin="30, 0, 30,0" Padding="3" BackgroundColor="#880f1617" >
+            <Entry x:Name="PasswordField" Text="" Placeholder="PASSWORD" IsPassword="True" TextColor="White" 
+                   PlaceholderColor="White" FontSize="15" />
+        </Frame>
+            
+        <Label x:Name="ErrorField" Text="" TextColor="Red" Margin="30,0,30,0"/>
+            
+        <Button Text="Login" Clicked="Authentication" Margin="30,0,30,0" CornerRadius="40" 
+                TextColor="White" BackgroundColor="#aa395462" />
+    </StackLayout>
+    
+</ContentPage>

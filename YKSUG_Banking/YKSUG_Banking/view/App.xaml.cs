@@ -1,6 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using YKSUG_Banking.view;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -12,7 +12,7 @@ namespace YKSUG_Banking
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

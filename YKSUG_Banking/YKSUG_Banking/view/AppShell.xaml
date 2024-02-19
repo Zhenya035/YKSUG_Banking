@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:user="clr-namespace:YKSUG_Banking.view.User;assembly=YKSUG_Banking"
+             xmlns:yksugBanking="clr-namespace:YKSUG_Banking;assembly=YKSUG_Banking"
+             xmlns:view="clr-namespace:YKSUG_Banking.view;assembly=YKSUG_Banking"
+             x:Class="YKSUG_Banking.view.AppShell"
+             Shell.NavBarIsVisible="False">
+   
+    <ShellItem>
+        <ShellContent Title="LoginPage" Icon="MainPage.png" ContentTemplate="{DataTemplate view:LoginPage}" IsVisible="True"/>
+    </ShellItem>
+    
+    <TabBar Route="UserMain" IsVisible="True"> 
+        
+        <ShellContent Title="MainPage" Icon="MainPage.png" ContentTemplate="{DataTemplate yksugBanking:MainPage}"/>
+        
+        <ShellContent Title="Transaction" Icon="transaction.png" ContentTemplate="{DataTemplate user:Transaction}"/>
+
+        <ShellContent Title="Bonuses" Icon="Services.png" ContentTemplate="{DataTemplate user:Bonuses}"/>
+    </TabBar>
+    
+   <!-- <TabBar Route="AdminMain" IsVisible="True"> 
+        
+        <ShellContent Title="TopStudent" Icon="TopLogo.png" ContentTemplate="{DataTemplate admin:Top}"/>
+        
+        <Tab Title="Transaction" Icon="transaction.png">
+            <ShellContent Title="Give" ContentTemplate="{DataTemplate admin:AdminTransactionGive}"/>
+            <ShellContent Title="Take" ContentTemplate="{DataTemplate admin:AdminTransactionTake}"/>
+        </Tab>
+
+        <ShellContent Title="CreateBonus" Icon="CreateLogo.png" ContentTemplate="{DataTemplate admin:CreateBonus}"/>
+        
+        <ShellContent Title="CheckBonus" Icon="CheckLogo.png" ContentTemplate="{DataTemplate admin:CheckBonus}"/>
+    </TabBar>-->
+    
+</Shell>
