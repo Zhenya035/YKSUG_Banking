@@ -46,7 +46,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012"/>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs"/>
@@ -59,6 +59,14 @@
         <None Include="Properties\AndroidManifest.xml"/>
     </ItemGroup>
     <ItemGroup>
+        <AndroidResource Include="Resources\drawable\background.jpg" />
+        <AndroidResource Include="Resources\drawable\CheckLogo.png" />
+        <AndroidResource Include="Resources\drawable\CreateLogo.png" />
+        <AndroidResource Include="Resources\drawable\logo.png" />
+        <AndroidResource Include="Resources\drawable\MainPage.png" />
+        <AndroidResource Include="Resources\drawable\Services.png" />
+        <AndroidResource Include="Resources\drawable\TopLogo.png" />
+        <AndroidResource Include="Resources\drawable\transaction.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml"/>
         <AndroidResource Include="Resources\layout\Toolbar.axml"/>
         <AndroidResource Include="Resources\values\styles.xml"/>
