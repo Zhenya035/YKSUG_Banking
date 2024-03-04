@@ -3,7 +3,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:entity="clr-namespace:YKSUG_Banking.scripts.entity;assembly=YKSUG_Banking"
-             x:Class="YKSUG_Banking.view.User.Bonuses">
+             x:Class="YKSUG_Banking.view.User.Bonuses"
+             BackgroundImageSource="background.jpg">
     
      <StackLayout>
         <Frame BackgroundColor="#880f1617" CornerRadius="20" Margin="10" Padding="10" x:Name="Bought" IsVisible="False">
