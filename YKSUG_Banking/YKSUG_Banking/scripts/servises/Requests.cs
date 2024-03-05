@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Cache;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using YKSUG_Banking.scripts.api;
@@ -74,6 +75,68 @@ namespace YKSUG_Banking.scripts.servises
             string tmpResponse = await SendRequest.PostRequest(BUY_BONUS_URL, request, MainPage.authResponse.Token);
 
             return JsonConvert.DeserializeObject<BuyBonusResponse>(tmpResponse);
+        }
+        
+        public static async Task<AdminResponse> CheckTokenPostRequest(AdminCheckBonusTokenRequest request)
+        {
+            string CHECK_BONUS_URL = $"https://yksug-banking-system.onrender.com/admins/check";
+
+            string tmpResponse = await SendRequest.PostRequest(CHECK_BONUS_URL , request, MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
+        }
+        
+        public static async Task<AdminResponse> CreateBonusPostRequest(BonusMainData request)
+        {
+            const string CREATE_BONUS_URL = "https://yksug-banking-system.onrender.com/admins/create-bonus";
+
+            string tmpResponse = await SendRequest.PostRequest(CREATE_BONUS_URL , request, MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
+        }
+        
+        public static async Task<AdminResponse> GiveTransactionPostRequest(AdminTransactionRequest request)
+        {
+            const string CREATE_BONUS_URL = "https://yksug-banking-system.onrender.com/admins/add";
+
+            string tmpResponse = await SendRequest.PostRequest(CREATE_BONUS_URL , request, MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
+        }
+        
+        public static async Task<AdminResponse> TakeTransactionPostRequest(AdminTransactionRequest request)
+        {
+            const string CREATE_BONUS_URL = "https://yksug-banking-system.onrender.com/admins/get";
+
+            string tmpResponse = await SendRequest.PostRequest(CREATE_BONUS_URL , request, MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
+        }
+        
+        public static async Task<List<AccountMainInfo>> ShowAllAccounts()
+        {
+            string GET_ALL_ACCOUNTS_URL = "https://yksug-banking-system.onrender.com/admins/get-accounts";
+
+            string json = await SendRequest.SendGetRequest(GET_ALL_ACCOUNTS_URL, MainPage.authResponse.Token);
+            return JsonConvert.DeserializeObject<List<AccountMainInfo>>(json);
+        }
+        
+        public static async Task<AdminResponse> DeleteBonusPostRequest(BonusMainData request)
+        {
+            string CREATE_BONUS_URL = $"https://yksug-banking-system.onrender.com/admins/{request.name}";
+
+            string tmpResponse = await SendRequest.SendDeleteRequest(CREATE_BONUS_URL , MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
+        }
+        
+        public static async Task<AdminResponse> EditBonusPutRequest(BonusMainData request)
+        {
+            string CREATE_BONUS_URL = $"https://yksug-banking-system.onrender.com/admins/{request.Id}";
+
+            string tmpResponse = await SendRequest.SendPutRequest(CREATE_BONUS_URL , request, MainPage.authResponse.Token);
+
+            return JsonConvert.DeserializeObject<AdminResponse>(tmpResponse);
         }
     }
 }
