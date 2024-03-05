@@ -65,6 +65,7 @@
         <AndroidResource Include="Resources\drawable\logo.png" />
         <AndroidResource Include="Resources\drawable\MainPage.png" />
         <AndroidResource Include="Resources\drawable\Services.png" />
+        <AndroidResource Include="Resources\drawable\SettingsLogo.png" />
         <AndroidResource Include="Resources\drawable\TopLogo.png" />
         <AndroidResource Include="Resources\drawable\transaction.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml"/>

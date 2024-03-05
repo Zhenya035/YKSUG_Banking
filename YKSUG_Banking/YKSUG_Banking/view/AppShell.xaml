@@ -5,34 +5,33 @@
              xmlns:user="clr-namespace:YKSUG_Banking.view.User;assembly=YKSUG_Banking"
              xmlns:yksugBanking="clr-namespace:YKSUG_Banking;assembly=YKSUG_Banking"
              xmlns:view="clr-namespace:YKSUG_Banking.view;assembly=YKSUG_Banking"
+             xmlns:admin="clr-namespace:YKSUG_Banking.view.Admin;assembly=YKSUG_Banking"
              x:Class="YKSUG_Banking.view.AppShell"
              Shell.NavBarIsVisible="False">
    
-    <ShellItem>
-        <ShellContent Title="LoginPage" Icon="MainPage.png" ContentTemplate="{DataTemplate view:LoginPage}" IsVisible="True"/>
-    </ShellItem>
+    <TabBar Route="LoginPage"> 
+            <ShellContent Title="LoginPage" Icon="MainPage.png" ContentTemplate="{DataTemplate view:LoginPage}" IsVisible="True"/>
+    </TabBar>
     
     <TabBar Route="UserMain" IsVisible="True"> 
         
-        <ShellContent Title="MainPage" Icon="MainPage.png" ContentTemplate="{DataTemplate yksugBanking:MainPage}"/>
+        <ShellContent Route="MainPage" Title="MainPage" Icon="MainPage.png" ContentTemplate="{DataTemplate yksugBanking:MainPage}"/>
         
         <ShellContent Title="Transaction" Icon="transaction.png" ContentTemplate="{DataTemplate user:Transaction}"/>
 
         <ShellContent Title="Bonuses" Icon="Services.png" ContentTemplate="{DataTemplate user:Bonuses}"/>
+        
+        <ShellContent Title="Settings" Icon="SettingsLogo.png" ContentTemplate="{DataTemplate view:Settings}"/>
     </TabBar>
     
-   <!-- <TabBar Route="AdminMain" IsVisible="True"> 
-        
-        <ShellContent Title="TopStudent" Icon="TopLogo.png" ContentTemplate="{DataTemplate admin:Top}"/>
-        
-        <Tab Title="Transaction" Icon="transaction.png">
-            <ShellContent Title="Give" ContentTemplate="{DataTemplate admin:AdminTransactionGive}"/>
-            <ShellContent Title="Take" ContentTemplate="{DataTemplate admin:AdminTransactionTake}"/>
-        </Tab>
+   <TabBar Route="AdminMain" IsVisible="True"> 
+        <ShellContent Route="Users" Title="Users" Icon="transaction.png" ContentTemplate="{DataTemplate admin:AllUsers}"/>
 
-        <ShellContent Title="CreateBonus" Icon="CreateLogo.png" ContentTemplate="{DataTemplate admin:CreateBonus}"/>
+        <ShellContent Title="CreateBonus" Icon="CreateLogo.png" ContentTemplate="{DataTemplate admin:AllBonuses}"/>
         
         <ShellContent Title="CheckBonus" Icon="CheckLogo.png" ContentTemplate="{DataTemplate admin:CheckBonus}"/>
-    </TabBar>-->
+        
+        <ShellContent Title="Settings" Icon="SettingsLogo.png" ContentTemplate="{DataTemplate view:Settings}"/>
+    </TabBar>
     
 </Shell>
