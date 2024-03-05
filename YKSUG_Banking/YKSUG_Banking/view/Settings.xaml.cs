@@ -16,5 +16,10 @@ namespace YKSUG_Banking.view
         {
             InitializeComponent();
         }
+
+        private async void LogOut(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
     }
 }
