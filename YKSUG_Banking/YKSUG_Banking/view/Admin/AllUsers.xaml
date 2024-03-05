@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:entity="clr-namespace:YKSUG_Banking.scripts.entity;assembly=YKSUG_Banking"
+             x:Class="YKSUG_Banking.view.Admin.AllUsers">
+    
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Entry Text="" Placeholder="Поиск"/>
+            <Button Text="Найти"/>
+        </StackLayout>
+        
+        <CollectionView x:Name="Users"
+                        SelectionMode="Single"
+                        SelectionChanged="CreateTransaction">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:AccountMainInfo">
+                                <StackLayout Margin="0,0,0,20">
+                                    <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7" >
+                                        <StackLayout>
+                                            
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="45" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <Label Text="Имя:" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Grid.Column="1" Text="{Binding Username}" TextColor="White"/>
+                                            </Grid>
+                                            
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <Label Text="Номер карты:" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Grid.Column="1" Text="{Binding Card.CardNumber}" TextColor="White"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

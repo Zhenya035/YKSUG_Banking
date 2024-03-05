@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YKSUG_Banking.view.Admin.CreateBonus">
+    
+    <StackLayout>
+        <Entry x:Name="NameEntry" Text="" Placeholder="Введите название"/>
+        <Entry x:Name="DescriptionEntry" Text="" Placeholder="Введите описание"/>
+        <Entry x:Name="PriceEntry" Text="" Placeholder="Введите цену"/>
+        <Entry x:Name="AmountEntry" Text="" Placeholder="Введите количество"/>
+        <Button Text="Сохранить" Clicked="Create"/>
+    </StackLayout>
+    
+</ContentPage>
