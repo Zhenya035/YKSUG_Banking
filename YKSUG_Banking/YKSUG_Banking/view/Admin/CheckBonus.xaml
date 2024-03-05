@@ -7,7 +7,7 @@
     <StackLayout>
         <Entry x:Name="NameEntry" Text="" Placeholder="Введите имя пользователя"/>
         <Entry x:Name="TokenEntry" Text="" Placeholder="Введите токен бонуса"/>
-        <Button Text="Проверить" Clicked="Check"></Button>
+        <Button Text="Использовать" Clicked="Check"/>
     </StackLayout>
     
 </ContentPage>

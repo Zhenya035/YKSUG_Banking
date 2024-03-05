@@ -31,7 +31,7 @@ namespace YKSUG_Banking.view.Admin
 
             if (response.State.ToLower().Contains("true"))
             {
-                await DisplayAlert("Успешно", "Бонус найден", "ОК");
+                await DisplayAlert("Успешно", "Бонус использован", "ОК");
             }
             else
             {

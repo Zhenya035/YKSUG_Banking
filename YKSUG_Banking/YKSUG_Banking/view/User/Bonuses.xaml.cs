@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
 using YKSUG_Banking.scripts.servises;
@@ -31,7 +25,11 @@ namespace YKSUG_Banking.view.User
             {
                 Bought.IsVisible = true;
             }
-            AppShell.SetTabBarIsVisible(this, true);
+            else if (Bought.IsVisible)
+            {
+                Bought.IsVisible = false;
+            }
+            Shell.SetTabBarIsVisible(this, true);
 			
             base.OnAppearing();
         }
