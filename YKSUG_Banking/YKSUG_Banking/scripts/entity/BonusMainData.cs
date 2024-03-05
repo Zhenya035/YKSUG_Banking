@@ -4,6 +4,8 @@ namespace YKSUG_Banking.scripts.entity
 {
     public class BonusMainData
     {
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
         [JsonProperty(PropertyName = "name")]
         public string name { get; set; }
         [JsonProperty(PropertyName = "description")]

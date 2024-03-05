@@ -5,6 +5,8 @@ namespace YKSUG_Banking.scripts.entity
 {
     public class AccountMainInfo
     {
+        [JsonProperty(PropertyName="id")]
+        public long Id { get; set; }
         [JsonProperty(PropertyName="username")]
         public string Username { get; set; }
         [JsonProperty(PropertyName="card")]
