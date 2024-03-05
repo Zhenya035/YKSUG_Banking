@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity.Request;
@@ -16,7 +12,6 @@ namespace YKSUG_Banking.view
     {
         public LoginPage()
     {
-        AppShell.SetTabBarIsVisible(this, false);
         InitializeComponent();
     }
     
@@ -31,7 +26,7 @@ namespace YKSUG_Banking.view
             
         if (MainPage.authResponse.Token.Contains("false"))
         {
-            ErrorField.Text = "Invalid credentials";
+            await DisplayAlert("ERROR", "Неверные данные", "ОК");
         }
         else
         {
@@ -55,17 +50,15 @@ namespace YKSUG_Banking.view
 
                 MainPage.prettyCardNumber = tmpCardNumber.ToString();
 
-                ErrorField.Text = "";
+                await Shell.Current.GoToAsync("//UserMain/MainPage");
 
-                await AppShell.Current.GoToAsync("//UserMain");
-
-                AppShell.SetTabBarIsVisible(this, true);
+                Shell.SetTabBarIsVisible(this, true);                                                                                                                                                                                                                                                                                                                                                                    
             }
             else if(MainPage.authResponse.Role == "ADMIN")
             {
-                await AppShell.Current.GoToAsync("//AdminMain");
+                await Shell.Current.GoToAsync("//AdminMain/Users");
 
-                AppShell.SetTabBarIsVisible(this, true);
+                Shell.SetTabBarIsVisible(this, true);
             }
         }
     }
@@ -76,13 +69,12 @@ namespace YKSUG_Banking.view
             
         if (MainPage.authResponse.Token.Contains("false"))
         {
-            ErrorField.Text = "Invalid credentials";
+            await DisplayAlert("ERROR", "Неверные данные", "ОК");
         }
         else
         {
             if (MainPage.authResponse.Role == "USER")
             {
-
                 MainPage.account = await Requests.GetAccount(MainPage.account, request.Username, MainPage.authResponse.Token);
 
                 StringBuilder tmpCardNumber = new StringBuilder("");
@@ -99,28 +91,23 @@ namespace YKSUG_Banking.view
 
                 MainPage.prettyCardNumber = tmpCardNumber.ToString();
 
-                ErrorField.Text = "";
-
                 await AppShell.Current.GoToAsync("//UserMain");
 
                 AppShell.SetTabBarIsVisible(this, true);
-            }
-            else
-            {
-
             }
         }
     }
 
     protected override async void OnAppearing()
     {
+        Shell.SetTabBarIsVisible(this, false);
         AuthenticationRequest request = await AuthRequestHandler.LoadAuthData();
         if (request != null)
         {
             UserNameField.Text = request.Username;
             PasswordField.Text = request.Password;
             
-            AutoAuthentication(request);
+            //AutoAuthentication(request);
         }
         base.OnAppearing();
     }

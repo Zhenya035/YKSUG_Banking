@@ -19,9 +19,7 @@
                    PlaceholderColor="White" FontSize="15" />
         </Frame>
             
-        <Label x:Name="ErrorField" Text="" TextColor="Red" Margin="30,0,30,0"/>
-            
-        <Button Text="Login" Clicked="Authentication" Margin="30,0,30,0" CornerRadius="40" 
+        <Button Text="Войти" Clicked="Authentication" Margin="30,0,30,0" CornerRadius="40" 
                 TextColor="White" BackgroundColor="#aa395462" />
     </StackLayout>
     
