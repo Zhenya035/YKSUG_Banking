@@ -37,7 +37,7 @@ namespace YKSUG_Banking.view
                 if (MainPage.authResponse.Role == "USER")
                 {
                     MainPage.account = await Requests.GetAccount(UserNameField.Text,
-                        MainPage.authResponse.Token);//вылет при регистрации тк тут account=null
+                        MainPage.authResponse.Token);
 
                     var tmpCardNumber = new StringBuilder("");
 
@@ -99,6 +99,8 @@ namespace YKSUG_Banking.view
         protected override async void OnAppearing()
         {
             Shell.SetTabBarIsVisible(this, false);
+            LoginButton.IsEnabled = true;
+            
             var request = await AuthRequestHandler.LoadAuthData();
             if (request != null)
             {
