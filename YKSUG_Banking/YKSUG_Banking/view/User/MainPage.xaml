@@ -36,7 +36,7 @@
                         </Grid.ColumnDefinitions>
                         
                         <StackLayout HorizontalOptions="Start" VerticalOptions="End">
-                            <Label Text="Card holder" TextColor="#aaa"/>
+                            <Label Text="Имя:" TextColor="#aaa"/>
                             <Label x:Name="username" Text="" TextColor="White" FontFamily="Arial"/>    
                         </StackLayout>
                         
@@ -66,18 +66,18 @@
                                                     </Grid.ColumnDefinitions>
                                                     
                                                     <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                                        <Label Text="From:" TextColor="White" FontAttributes="Bold"/>
+                                                        <Label Text="От:" TextColor="White" FontAttributes="Bold"/>
                                                         <Label Text="{Binding fromCard}" TextColor="White"/>
                                                     </StackLayout>
                                                     
                                                     <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
-                                                        <Label Text="To:" TextColor="White" FontAttributes="Bold"/>
+                                                        <Label Text="К:" TextColor="White" FontAttributes="Bold"/>
                                                         <Label Text="{Binding toCard}" TextColor="White"/>
                                                     </StackLayout>
                                                 </Grid>
 
                                                 <StackLayout Orientation="Horizontal">
-                                                    <Label Text="Amount:" TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Сумма:" TextColor="White" FontAttributes="Bold"/>
                                                     <Label Text="{Binding amount}" TextColor="White" />
                                                 </StackLayout>
                                                 
@@ -90,7 +90,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     
-                                                    <Label Text="Description: " TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Описание: " TextColor="White" FontAttributes="Bold"/>
                                                     <Label Grid.Column="1" Text="{Binding description}" TextColor="White"/>
                                                 </Grid>
                                                 

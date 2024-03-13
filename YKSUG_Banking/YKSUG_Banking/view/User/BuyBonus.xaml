@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     
-                    <Label Text="Name:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Text="Название:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
                     <Label Grid.Column="1" x:Name="name" TextColor="White" FontSize="15"/>
                 </Grid>
         
@@ -68,7 +68,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     
-                    <Label Text="Description:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
                     <Label Grid.Column="1" x:Name="description" TextColor="White" FontSize="15"/>
                 </Grid>
         
@@ -81,7 +81,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     
-                    <Label Text="Price: " TextColor="White" FontSize="15" FontAttributes="Bold"/>
+                    <Label Text="Цена: " TextColor="White" FontSize="15" FontAttributes="Bold"/>
                     <Label Grid.Column="1" x:Name="price" TextColor="White" FontSize="15"/>    
                 </Grid>
                 
@@ -94,7 +94,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     
-                    <Label Text="Amount:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
+                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
                     <Label Grid.Column="1" x:Name="amountBonuses" TextColor="White" FontSize="15"/>
                 </Grid>
                 

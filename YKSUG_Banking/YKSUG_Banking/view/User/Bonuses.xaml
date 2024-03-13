@@ -29,7 +29,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 
-                                                <Label Text="Name:" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Text="Название:" TextColor="White" FontAttributes="Bold"/>
                                                 <Label Grid.Column="1" Text="{Binding Name}" TextColor="White"/>
                                             </Grid>
                                             
@@ -42,7 +42,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 
-                                                <Label Text="Description:" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Text="Описание:" TextColor="White" FontAttributes="Bold"/>
                                                 <Label Grid.Column="1" Text="{Binding Description}" TextColor="White"/>
                                             </Grid>
                                         
@@ -55,7 +55,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 
-                                                <Label Text="Token:" TextColor="White" FontAttributes="Bold"/>
+                                                <Label Text="Токен:" TextColor="White" FontAttributes="Bold"/>
                                                 <Label Grid.Column="1" Text="{Binding Token}" TextColor="White"/>
                                             </Grid>
                                             
@@ -93,7 +93,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     
-                                                    <Label Text="Name: " TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Название: " TextColor="White" FontAttributes="Bold"/>
                                                     <Label Grid.Column="1" Text="{Binding name}" TextColor="White"/>
                                                 </Grid>
                                                 
@@ -106,7 +106,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     
-                                                    <Label Text="Description:" TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold"/>
                                                     <Label Grid.Column="1" Text="{Binding description}" TextColor="White"/>
                                                 </Grid>
                                                 
@@ -119,7 +119,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     
-                                                    <Label Text="Price:" TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Цена:" TextColor="White" FontAttributes="Bold"/>
                                                     <Label Grid.Column="1" Text="{Binding price}" TextColor="White"/>
                                                 </Grid>
                                         
@@ -132,7 +132,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     
-                                                    <Label Text="Amount:" TextColor="White" FontAttributes="Bold"/>
+                                                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold"/>
                                                     <Label Grid.Column="1" Text="{Binding amount}" TextColor="White"/>
                                                 </Grid>
                                                 

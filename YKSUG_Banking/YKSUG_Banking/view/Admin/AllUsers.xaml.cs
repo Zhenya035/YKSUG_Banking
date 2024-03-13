@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using YKSUG_Banking.scripts.entity;
 using YKSUG_Banking.scripts.servises;
 
@@ -8,8 +6,6 @@ namespace YKSUG_Banking.view.Admin
 {
     public partial class AllUsers : ContentPage
     {
-        private Task<List<AccountMainInfo>> accounts;
-        
         public AllUsers()
         {
             InitializeComponent();
