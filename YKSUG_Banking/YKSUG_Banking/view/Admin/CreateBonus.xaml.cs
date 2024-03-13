@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
-using YKSUG_Banking.scripts.entity.Response;
 using YKSUG_Banking.scripts.servises;
 
 namespace YKSUG_Banking.view.Admin
@@ -24,13 +23,13 @@ namespace YKSUG_Banking.view.Admin
                 return;
             }
 
-            BonusMainData request = new BonusMainData();
+            var request = new BonusMainData();
             request.name = NameEntry.Text;
             request.description = DescriptionEntry.Text;
             request.price = Convert.ToInt64(PriceEntry.Text);
             request.amount = Convert.ToInt64(AmountEntry.Text);
-            
-            AdminResponse response = await Requests.CreateBonusPostRequest(request);
+
+            var response = await Requests.CreateBonusPostRequest(request);
 
             if (response.State.ToLower().Contains("true"))
             {

@@ -21,15 +21,15 @@ namespace YKSUG_Banking.view.Admin
 
         private async void EditBonus(object sender, SelectionChangedEventArgs e)
         {
-            BonusMainData bonus = e.CurrentSelection[0] as BonusMainData;
+            var bonus = e.CurrentSelection[0] as BonusMainData;
 
             await Navigation.PushAsync(new EditBonus(bonus));
         }
-        
+
         protected override async void OnAppearing()
         {
             BonusesTemplate.ItemsSource = await Requests.ShowAllBonuses();
-			
+
             base.OnAppearing();
         }
     }

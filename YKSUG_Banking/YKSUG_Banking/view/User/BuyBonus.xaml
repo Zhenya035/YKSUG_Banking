@@ -4,46 +4,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YKSUG_Banking.view.User.BuyBonus"
              BackgroundImageSource="background.jpg">
-    
+
     <StackLayout>
         <Frame Margin="10" CornerRadius="20" HeightRequest="132">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#aa0188B2"
-                                      Offset="0.0" />
-                        <GradientStop Color="#46005d"
-                                      Offset="1.0" />
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <StackLayout>
-                    
-                    <Label x:Name="cardNumber" Text="" TextColor="white" FontSize="16" FontFamily="Arial" />
-                    
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 15, 0, 15">
-                        <Label x:Name="amount" Text="" TextColor="White" FontFamily="Arial" FontSize="20" />
-                        <Label Text="$" TextColor="White" FontFamily="Arial" FontSize="20" />
-                    </StackLayout>
-                    
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <StackLayout HorizontalOptions="Start" VerticalOptions="End">
-                            <Label Text="Card holder" TextColor="#aaa"/>
-                            <Label x:Name="username" Text="" TextColor="White" FontFamily="Arial"/>    
-                        </StackLayout>
-                        
-                        <Image Grid.Column="1" Source="logo.png" HorizontalOptions="End" VerticalOptions="End" HeightRequest="70" WidthRequest="70"></Image>
-                    </Grid>
-                    
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#aa0188B2"
+                                  Offset="0.0" />
+                    <GradientStop Color="#46005d"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Frame.Background>
+            <StackLayout>
+
+                <Label x:Name="cardNumber" Text="" TextColor="white" FontSize="16" FontFamily="Arial" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 15, 0, 15">
+                    <Label x:Name="amount" Text="" TextColor="White" FontFamily="Arial" FontSize="20" />
+                    <Label Text="$" TextColor="White" FontFamily="Arial" FontSize="20" />
                 </StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="End">
+                        <Label Text="Card holder" TextColor="#aaa" />
+                        <Label x:Name="username" Text="" TextColor="White" FontFamily="Arial" />
+                    </StackLayout>
+
+                    <Image Grid.Column="1" Source="logo.png" HorizontalOptions="End" VerticalOptions="End"
+                           HeightRequest="70" WidthRequest="70" />
+                </Grid>
+
+            </StackLayout>
         </Frame>
-        
+
         <Frame BackgroundColor="#880f1617" CornerRadius="20" Margin="10" Padding="10" x:Name="Bought">
             <StackLayout>
                 <Grid>
@@ -54,11 +55,11 @@
                         <ColumnDefinition Width="45" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Text="Название:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
-                    <Label Grid.Column="1" x:Name="name" TextColor="White" FontSize="15"/>
+
+                    <Label Text="Название:" TextColor="White" FontAttributes="Bold" FontSize="15" />
+                    <Label Grid.Column="1" x:Name="name" TextColor="White" FontSize="15" />
                 </Grid>
-        
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -67,11 +68,11 @@
                         <ColumnDefinition Width="85" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
-                    <Label Grid.Column="1" x:Name="description" TextColor="White" FontSize="15"/>
+
+                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold" FontSize="15" />
+                    <Label Grid.Column="1" x:Name="description" TextColor="White" FontSize="15" />
                 </Grid>
-        
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -80,11 +81,11 @@
                         <ColumnDefinition Width="40" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Text="Цена: " TextColor="White" FontSize="15" FontAttributes="Bold"/>
-                    <Label Grid.Column="1" x:Name="price" TextColor="White" FontSize="15"/>    
+
+                    <Label Text="Цена: " TextColor="White" FontSize="15" FontAttributes="Bold" />
+                    <Label Grid.Column="1" x:Name="price" TextColor="White" FontSize="15" />
                 </Grid>
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -93,17 +94,17 @@
                         <ColumnDefinition Width="60" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold" FontSize="15"/>
-                    <Label Grid.Column="1" x:Name="amountBonuses" TextColor="White" FontSize="15"/>
+
+                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold" FontSize="15" />
+                    <Label Grid.Column="1" x:Name="amountBonuses" TextColor="White" FontSize="15" />
                 </Grid>
-                
+
             </StackLayout>
         </Frame>
-        
+
         <Button Text="Buy" Clicked="Buy" CornerRadius="40" Margin="10,0,10,0"
-                TextColor="White" BackgroundColor="#aa395462"/>
-        
+                TextColor="White" BackgroundColor="#aa395462" />
+
     </StackLayout>
-    
+
 </ContentPage>

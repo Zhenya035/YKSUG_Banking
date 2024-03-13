@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
-using YKSUG_Banking.scripts.entity.Response;
 using YKSUG_Banking.scripts.servises;
 
 namespace YKSUG_Banking.view.Admin
@@ -10,8 +9,8 @@ namespace YKSUG_Banking.view.Admin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditBonus : ContentPage
     {
-        private BonusMainData bonus;
-        
+        private readonly BonusMainData bonus;
+
         public EditBonus(BonusMainData bonus)
         {
             this.bonus = bonus;
@@ -33,8 +32,8 @@ namespace YKSUG_Banking.view.Admin
             bonus.description = DescriptionEntry.Text;
             bonus.price = Convert.ToInt64(PriceEntry.Text);
             bonus.amount = Convert.ToInt64(AmountEntry.Text);
-            
-            AdminResponse response = await Requests.EditBonusPutRequest(bonus);
+
+            var response = await Requests.EditBonusPutRequest(bonus);
 
             if (response.State.ToLower().Contains("true"))
             {
@@ -49,7 +48,7 @@ namespace YKSUG_Banking.view.Admin
 
         private async void Delete(object sender, EventArgs e)
         {
-            AdminResponse response = await Requests.DeleteBonusPostRequest(bonus);
+            var response = await Requests.DeleteBonusPostRequest(bonus);
 
             if (response.State.ToLower().Contains("true"))
             {
@@ -60,7 +59,6 @@ namespace YKSUG_Banking.view.Admin
             {
                 await DisplayAlert("Неудача", "Бонус не найден", "Ок");
             }
-            
         }
     }
 }

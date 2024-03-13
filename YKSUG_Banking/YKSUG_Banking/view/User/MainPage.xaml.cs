@@ -7,26 +7,26 @@ namespace YKSUG_Banking
 {
     public partial class MainPage : ContentPage
     {
-        public static AuthenticationResponse authResponse { get; set; }
-        public static AccountMainInfo account { get; set; }
-        public static string prettyCardNumber { get; set; }
-
         public MainPage()
         {
             InitializeComponent();
         }
 
+        public static AuthenticationResponse authResponse { get; set; }
+        public static AccountMainInfo account { get; set; }
+        public static string prettyCardNumber { get; set; }
+
         protected override async void OnAppearing()
         {
             if (account != null)
             {
-                account = await Requests.GetAccount(MainPage.account, account.Username, authResponse.Token);
-                
+                account = await Requests.GetAccount(account, account.Username, authResponse.Token);
+
                 username.Text = account.Username;
                 cardNumber.Text = prettyCardNumber;
                 amount.Text = account.Card.Amount.ToString();
 
-                ServicesTemplate.ItemsSource = await Requests.ShowLastServices();   
+                ServicesTemplate.ItemsSource = await Requests.ShowLastServices();
             }
 
             base.OnAppearing();

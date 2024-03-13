@@ -13,7 +13,7 @@ namespace YKSUG_Banking.view.Admin
 
         private async void CreateTransaction(object sender, SelectionChangedEventArgs e)
         {
-            AccountMainInfo account = e.CurrentSelection[0] as AccountMainInfo;
+            var account = e.CurrentSelection[0] as AccountMainInfo;
 
             await Navigation.PushAsync(new GiveAndTakeTransactions(account));
         }
@@ -21,7 +21,7 @@ namespace YKSUG_Banking.view.Admin
         protected override async void OnAppearing()
         {
             Users.ItemsSource = await Requests.ShowAllAccounts();
-            
+
             base.OnAppearing();
         }
     }

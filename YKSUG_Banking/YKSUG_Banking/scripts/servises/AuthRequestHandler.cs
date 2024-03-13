@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using YKSUG_Banking.scripts.entity.Request;
@@ -10,32 +11,32 @@ namespace YKSUG_Banking.scripts.servises
         public static async Task SaveAuthData(AuthenticationRequest request)
         {
             //gets path to file
-            string authFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "AuthRequest.json");
+            var authFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                "AuthRequest.json");
 
-            using (StreamWriter streamWriter = new StreamWriter(authFile))
+            using (var streamWriter = new StreamWriter(authFile))
             {
-                string content = JsonConvert.SerializeObject(request);
+                var content = JsonConvert.SerializeObject(request);
                 await streamWriter.WriteLineAsync(content);
             }
         }
 
         public static async Task<AuthenticationRequest> LoadAuthData()
         {
-            string authFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "AuthRequest.json");
-            FileInfo authInfo = new FileInfo(authFile);
+            var authFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                "AuthRequest.json");
+            var authInfo = new FileInfo(authFile);
 
             if (authInfo.Exists)
-            {
                 if (authInfo.Length > 0)
                 {
-                    StreamReader streamReader = new StreamReader(authFile);
-                    string tempContent = await streamReader.ReadToEndAsync();
+                    var streamReader = new StreamReader(authFile);
+                    var tempContent = await streamReader.ReadToEndAsync();
                     streamReader.Close();
-                    AuthenticationRequest request = JsonConvert.DeserializeObject<AuthenticationRequest>(tempContent);
+                    var request = JsonConvert.DeserializeObject<AuthenticationRequest>(tempContent);
                     return request;
                 }
 
-            }
             return null;
         }
     }

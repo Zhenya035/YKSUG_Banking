@@ -4,19 +4,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:entity="clr-namespace:YKSUG_Banking.scripts.entity;assembly=YKSUG_Banking"
              x:Class="YKSUG_Banking.view.Admin.AllBonuses">
-    
+
     <StackLayout>
-        <Button Text="Создать бонус" Clicked="AddBonus"></Button>
-        
+        <Button Text="Создать бонус" Clicked="AddBonus" />
+
         <CollectionView x:Name="BonusesTemplate"
-                                        SelectionMode="Single"
-                                        SelectionChanged="EditBonus">
+                        SelectionMode="Single"
+                        SelectionChanged="EditBonus">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:BonusMainData">
                     <StackLayout Margin="0,0,0,20">
-                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7" >
+                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7">
                             <StackLayout>
-                                
+
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -25,11 +25,11 @@
                                         <ColumnDefinition Width="45" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <Label Text="Название: " TextColor="White" FontAttributes="Bold"/>
-                                    <Label Grid.Column="1" Text="{Binding name}" TextColor="White"/>
+
+                                    <Label Text="Название: " TextColor="White" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding name}" TextColor="White" />
                                 </Grid>
-                                
+
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -38,11 +38,11 @@
                                         <ColumnDefinition Width="80" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold"/>
-                                    <Label Grid.Column="1" Text="{Binding description}" TextColor="White"/>
+
+                                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding description}" TextColor="White" />
                                 </Grid>
-                                
+
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -51,11 +51,11 @@
                                         <ColumnDefinition Width="40" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <Label Text="Цена:" TextColor="White" FontAttributes="Bold"/>
-                                    <Label Grid.Column="1" Text="{Binding price}" TextColor="White"/>
+
+                                    <Label Text="Цена:" TextColor="White" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding price}" TextColor="White" />
                                 </Grid>
-                        
+
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -64,11 +64,11 @@
                                         <ColumnDefinition Width="55" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold"/>
-                                    <Label Grid.Column="1" Text="{Binding amount}" TextColor="White"/>
+
+                                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding amount}" TextColor="White" />
                                 </Grid>
-                                
+
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -76,5 +76,5 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </StackLayout>
-    
+
 </ContentPage>

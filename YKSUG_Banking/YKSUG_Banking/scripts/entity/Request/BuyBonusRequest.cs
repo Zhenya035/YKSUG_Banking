@@ -4,9 +4,10 @@ namespace YKSUG_Banking.scripts.entity.Request
 {
     public class BuyBonusRequest
     {
-        [JsonProperty(PropertyName="username")]
+        [JsonProperty(PropertyName = "username")]
         public string Username { get; set; }
-        [JsonProperty(PropertyName="bonusName")]
+
+        [JsonProperty(PropertyName = "bonusName")]
         public string BonusName { get; set; }
     }
 }

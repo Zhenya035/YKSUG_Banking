@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
 using YKSUG_Banking.scripts.entity.Request;
-using YKSUG_Banking.scripts.entity.Response;
 using YKSUG_Banking.scripts.servises;
 
 namespace YKSUG_Banking.view.Admin
@@ -16,8 +10,8 @@ namespace YKSUG_Banking.view.Admin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GiveAndTakeTransactions : ContentPage
     {
-        private AccountMainInfo accounnt;
-        
+        private readonly AccountMainInfo accounnt;
+
         public GiveAndTakeTransactions(AccountMainInfo accounnt)
         {
             this.accounnt = accounnt;
@@ -31,13 +25,13 @@ namespace YKSUG_Banking.view.Admin
                 await DisplayAlert("Error", "Неверные данные", "ОК");
                 return;
             }
-            
-            AdminTransactionRequest request = new AdminTransactionRequest();
+
+            var request = new AdminTransactionRequest();
             request.cardNumber = accounnt.Card.CardNumber;
             request.description = DescriptionEntry.Text;
             request.amount = Convert.ToInt64(MoneyEntry.Text);
 
-            AdminResponse response = await Requests.GiveTransactionPostRequest(request);
+            var response = await Requests.GiveTransactionPostRequest(request);
 
             if (response.State.ToLower().Contains("true"))
             {
@@ -57,13 +51,13 @@ namespace YKSUG_Banking.view.Admin
                 await DisplayAlert("Error", "Неверные данные", "ОК");
                 return;
             }
-            
-            AdminTransactionRequest request = new AdminTransactionRequest();
+
+            var request = new AdminTransactionRequest();
             request.cardNumber = accounnt.Card.CardNumber;
             request.description = DescriptionEntry.Text;
             request.amount = Convert.ToInt64(MoneyEntry.Text);
 
-            AdminResponse response = await Requests.TakeTransactionPostRequest(request);
+            var response = await Requests.TakeTransactionPostRequest(request);
 
             if (response.State.ToLower().Contains("true"))
             {
@@ -81,7 +75,7 @@ namespace YKSUG_Banking.view.Admin
             NameLabel.Text = accounnt.Username;
             CardLabel.Text = accounnt.Card.CardNumber;
             MoneyLabel.Text = accounnt.Card.Amount.ToString();
-            
+
             base.OnAppearing();
         }
     }

@@ -3,11 +3,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YKSUG_Banking.view.Admin.CheckBonus">
-    
+
     <StackLayout>
-        <Entry x:Name="NameEntry" Text="" Placeholder="Введите имя пользователя"/>
-        <Entry x:Name="TokenEntry" Text="" Placeholder="Введите токен бонуса"/>
-        <Button Text="Использовать" Clicked="Check"/>
+        <Entry x:Name="NameEntry" Text="" Placeholder="Введите имя пользователя" />
+        <Entry x:Name="TokenEntry" Text="" Placeholder="Введите токен бонуса" />
+        <Button Text="Использовать" Clicked="Check" />
     </StackLayout>
-    
+
 </ContentPage>

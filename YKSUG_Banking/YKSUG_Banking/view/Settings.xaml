@@ -3,9 +3,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YKSUG_Banking.view.Settings">
-    
+
     <StackLayout>
-        <Button Text="Выйти из аккаунта" Clicked="LogOut"/>
+        <Button Text="Выйти из аккаунта" Clicked="LogOut" />
     </StackLayout>
-    
+
 </ContentPage>
