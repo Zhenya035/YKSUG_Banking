@@ -19,7 +19,7 @@
                    PlaceholderColor="White" FontSize="15" />
         </Frame>
 
-        <Button Text="Войти" Clicked="Authentication" Margin="30,0,30,0" CornerRadius="40"
+        <Button x:Name="LoginButton" Text="Войти" Clicked="Authentication" Margin="30,0,30,0" CornerRadius="40"
                 TextColor="White" BackgroundColor="#aa395462" />
     </StackLayout>
 

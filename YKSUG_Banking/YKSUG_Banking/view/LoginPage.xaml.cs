@@ -8,7 +8,7 @@ using YKSUG_Banking.scripts.servises;
 namespace YKSUG_Banking.view
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage
     {
         public LoginPage()
         {
@@ -19,6 +19,8 @@ namespace YKSUG_Banking.view
         {
             var request = new AuthenticationRequest();
 
+            LoginButton.IsEnabled = false;
+
             request.Username = UserNameField.Text;
             request.Password = PasswordField.Text;
 
@@ -27,14 +29,15 @@ namespace YKSUG_Banking.view
             if (MainPage.authResponse.Token.Contains("false"))
             {
                 await DisplayAlert("ERROR", "Неверные данные", "ОК");
+                LoginButton.IsEnabled = true;
             }
             else
             {
                 await AuthRequestHandler.SaveAuthData(request);
                 if (MainPage.authResponse.Role == "USER")
                 {
-                    MainPage.account = await Requests.GetAccount(MainPage.account, UserNameField.Text,
-                        MainPage.authResponse.Token);
+                    MainPage.account = await Requests.GetAccount(UserNameField.Text,
+                        MainPage.authResponse.Token);//вылет при регистрации тк тут account=null
 
                     var tmpCardNumber = new StringBuilder("");
 
@@ -72,7 +75,7 @@ namespace YKSUG_Banking.view
             {
                 if (MainPage.authResponse.Role == "USER")
                 {
-                    MainPage.account = await Requests.GetAccount(MainPage.account, request.Username,
+                    MainPage.account = await Requests.GetAccount(request.Username,
                         MainPage.authResponse.Token);
 
                     var tmpCardNumber = new StringBuilder("");
