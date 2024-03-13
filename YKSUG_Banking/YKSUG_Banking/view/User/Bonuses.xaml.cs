@@ -15,7 +15,7 @@ namespace YKSUG_Banking.view.User
 
         protected override async void OnAppearing()
         {
-            MainPage.account = await Requests.GetAccount(MainPage.account, MainPage.account.Username,
+            MainPage.account = await Requests.GetAccount(MainPage.account.Username,
                 MainPage.authResponse.Token);
 
             MainPage.account.Bonus.Reverse();

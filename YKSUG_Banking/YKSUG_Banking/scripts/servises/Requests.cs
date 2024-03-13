@@ -22,24 +22,22 @@ namespace YKSUG_Banking.scripts.servises
             return JsonConvert.DeserializeObject<AuthenticationResponse>(tmpResponse);
         }
 
-        public static async Task<AccountMainInfo> GetAccount(AccountMainInfo account, string name, string token)
+        public static async Task<AccountMainInfo> GetAccount(string name, string token)
         {
-            if (account == null) throw new ArgumentNullException(nameof(account));
-            
             var getAccountUrl = $"{ServerName}/accounts/{name}";
 
             var json = await SendRequest.SendGetRequest(getAccountUrl, token);
-            account = JsonConvert.DeserializeObject<AccountMainInfo>(json);
+            MainPage.account = JsonConvert.DeserializeObject<AccountMainInfo>(json);
 
-            if (account.Card != null) return account;
+            if (MainPage.account.Card != null) return MainPage.account;
             
             var cardUrl = $"{ServerName}/accounts/{name}/cards";
             await SendRequest.PostRequest(cardUrl, null, token);
 
             var card = await SendRequest.SendGetRequest(cardUrl, token);
-            account.Card = JsonConvert.DeserializeObject<CardMainInfo>(card);
+            MainPage.account.Card = JsonConvert.DeserializeObject<CardMainInfo>(card);
 
-            return account;
+            return MainPage.account;
         }
 
         public static async Task<string> SendTransaction(TransactionRequest request)

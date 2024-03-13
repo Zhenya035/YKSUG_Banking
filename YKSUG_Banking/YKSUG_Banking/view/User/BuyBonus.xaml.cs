@@ -51,7 +51,7 @@ namespace YKSUG_Banking.view.User
 
             if (MainPage.account != null)
             {
-                MainPage.account = await Requests.GetAccount(MainPage.account, MainPage.account.Username,
+                MainPage.account = await Requests.GetAccount(MainPage.account.Username,
                     MainPage.authResponse.Token);
 
                 username.Text = MainPage.account.Username;

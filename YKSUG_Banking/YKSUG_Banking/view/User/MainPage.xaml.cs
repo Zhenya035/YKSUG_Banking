@@ -20,7 +20,7 @@ namespace YKSUG_Banking
         {
             if (account != null)
             {
-                account = await Requests.GetAccount(account, account.Username, authResponse.Token);
+                account = await Requests.GetAccount(account.Username, authResponse.Token);
 
                 username.Text = account.Username;
                 cardNumber.Text = prettyCardNumber;
