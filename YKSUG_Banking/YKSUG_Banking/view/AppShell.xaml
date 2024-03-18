@@ -32,8 +32,6 @@
 
         <ShellContent Title="CreateBonus" Icon="CreateLogo.png" ContentTemplate="{DataTemplate admin:AllBonuses}" />
 
-        <ShellContent Title="CheckBonus" Icon="CheckLogo.png" ContentTemplate="{DataTemplate admin:CheckBonus}" />
-
         <ShellContent Title="Settings" Icon="SettingsLogo.png" ContentTemplate="{DataTemplate view:Settings}" />
     </TabBar>
 

@@ -15,6 +15,7 @@
         <StackLayout Orientation="Horizontal">
             <Button Text="Дать" Clicked="GiveTransaction" />
             <Button Text="Забрать" Clicked="TakeTransaction" />
+            <Button Text="Испоьзовать бонус" Clicked="Check"/>
         </StackLayout>
     </StackLayout>
 
