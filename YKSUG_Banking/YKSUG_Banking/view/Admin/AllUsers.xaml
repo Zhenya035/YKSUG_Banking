@@ -6,10 +6,7 @@
              x:Class="YKSUG_Banking.view.Admin.AllUsers">
 
     <StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Entry Text="" Placeholder="Поиск" />
-            <Button Text="Найти" />
-        </StackLayout>
+        <SearchBar Placeholder="Поиск" TextChanged="OnTextChanged"/>
 
         <CollectionView x:Name="Users"
                         SelectionMode="Single"
