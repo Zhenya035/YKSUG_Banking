@@ -62,13 +62,14 @@
     </ItemGroup>
     <ItemGroup>
         <AndroidResource Include="Resources\drawable\background.jpg" />
+        <AndroidResource Include="Resources\drawable\BonusLogo.png" />
         <AndroidResource Include="Resources\drawable\CheckLogo.png" />
         <AndroidResource Include="Resources\drawable\CreateLogo.png" />
+        <AndroidResource Include="Resources\drawable\HistoryLogo.png" />
         <AndroidResource Include="Resources\drawable\logo.png" />
         <AndroidResource Include="Resources\drawable\MainPage.png" />
         <AndroidResource Include="Resources\drawable\Services.png" />
         <AndroidResource Include="Resources\drawable\SettingsLogo.png" />
-        <AndroidResource Include="Resources\drawable\TopLogo.png" />
         <AndroidResource Include="Resources\drawable\transaction.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml"/>
         <AndroidResource Include="Resources\layout\Toolbar.axml"/>

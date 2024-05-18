@@ -16,6 +16,7 @@
             <Button Text="Дать" Clicked="GiveTransaction" />
             <Button Text="Забрать" Clicked="TakeTransaction" />
             <Button Text="Испоьзовать бонус" Clicked="Check"/>
+            <Button Text="Выдать бонус" Clicked="GiveBonus"/>
         </StackLayout>
     </StackLayout>
 

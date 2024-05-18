@@ -21,12 +21,19 @@ namespace YKSUG_Banking
             if (account != null)
             {
                 account = await Requests.GetAccount(account.Username, authResponse.Token);
-
-                username.Text = account.Username;
-                cardNumber.Text = prettyCardNumber;
+                
                 amount.Text = account.Card.Amount.ToString();
 
-                ServicesTemplate.ItemsSource = await Requests.ShowLastServices();
+                if (account.Bonus.Count > 0)
+                {
+                    account.Bonus.Reverse();
+                    BoughtBonuses.ItemsSource = account.Bonus;
+                    NoBonusLabel.Text = "Купленные бонусы: ";
+                }
+                else
+                {
+                    NoBonusLabel.Text = "Купленных бонусов нет";
+                }
             }
 
             base.OnAppearing();

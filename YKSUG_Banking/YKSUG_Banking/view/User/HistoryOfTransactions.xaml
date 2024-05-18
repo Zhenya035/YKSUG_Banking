@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:entity="clr-namespace:YKSUG_Banking.scripts.entity;assembly=YKSUG_Banking"
+             x:Class="YKSUG_Banking.view.User.HistoryOfTransactions"
+             BackgroundColor = "#FFFFFF">
+    
+            <StackLayout>
+
+                <StackLayout>
+                    <CollectionView x:Name="ServicesTemplate">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:TransactionMainInfo">
+                                <StackLayout Margin="0,0,0,3">
+                                    <Frame>
+                                        <StackLayout>
+                                           
+                                           <Label Text="{Binding amount}" TextColor="Black" FontSize="20"/>
+
+                                           <Label Grid.Column="1" Text="{Binding description}"
+                                                   TextColor="Black" FontSize="14"/>
+
+                                            <Label Text="{Binding date}" TextColor="Black"
+                                                   HorizontalOptions="End" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+    
+    
+</ContentPage>

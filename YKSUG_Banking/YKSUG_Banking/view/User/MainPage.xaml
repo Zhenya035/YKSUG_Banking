@@ -4,112 +4,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:entity="clr-namespace:YKSUG_Banking.scripts.entity;assembly=YKSUG_Banking"
              x:Class="YKSUG_Banking.MainPage"
-             BackgroundImageSource="background.jpg">
+             BackgroundColor = "#FFFFFF">
 
     <StackLayout>
+        <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50"
+               WidthRequest="50"  Margin="5, 0, 0 , 5"/>
+        
+        <Frame Margin="10, 0, 10, 30" CornerRadius="25" HeightRequest="170" BackgroundColor="#5796E4">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="amount" Text="" FontSize="20" TextColor="White"/>
+                <Label Text="$" FontSize="20" TextColor="White"/>  
+            </StackLayout>
+        </Frame>
+        
         <StackLayout>
-
-            <Frame Margin="10" CornerRadius="20" HeightRequest="160">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#aa0188B2"
-                                      Offset="0.0" />
-                        <GradientStop Color="#46005d"
-                                      Offset="1.0" />
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <StackLayout>
-
-                    <Label x:Name="cardNumber" Text="" TextColor="white" FontSize="16" FontFamily="Arial" />
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 15, 0, 15">
-                        <Label x:Name="amount" Text="" TextColor="White" FontFamily="Arial" FontSize="20" />
-                        <Label Text="$" TextColor="White" FontFamily="Arial" FontSize="20" />
-                    </StackLayout>
-
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                        <StackLayout HorizontalOptions="Start" VerticalOptions="End">
-                            <Label Text="Имя:" TextColor="#aaa" />
-                            <Label x:Name="username" Text="" TextColor="White" FontFamily="Arial" />
-                        </StackLayout>
-
-                        <Image Grid.Column="1" Source="logo.png" HorizontalOptions="End" VerticalOptions="End"
-                               HeightRequest="70" WidthRequest="70" />
-                    </Grid>
-
-                </StackLayout>
-            </Frame>
-
-            <Frame BackgroundColor="#880f1617" CornerRadius="20" Margin="10" Padding="10">
-                <StackLayout>
-
-                    <StackLayout>
-                        <CollectionView x:Name="ServicesTemplate">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate x:DataType="entity:TransactionMainInfo">
-                                    <StackLayout Margin="0,0,0,20">
-                                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7">
-                                            <StackLayout>
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="*" />
-                                                    </Grid.RowDefinitions>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*" />
-                                                        <ColumnDefinition Width="*" />
-                                                    </Grid.ColumnDefinitions>
-
-                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                                        <Label Text="От:" TextColor="White" FontAttributes="Bold" />
-                                                        <Label Text="{Binding fromCard}" TextColor="White" />
-                                                    </StackLayout>
-
-                                                    <StackLayout Grid.Column="1" Orientation="Horizontal"
-                                                                 HorizontalOptions="End">
-                                                        <Label Text="К:" TextColor="White" FontAttributes="Bold" />
-                                                        <Label Text="{Binding toCard}" TextColor="White" />
-                                                    </StackLayout>
-                                                </Grid>
-
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="Сумма:" TextColor="White" FontAttributes="Bold" />
-                                                    <Label Text="{Binding amount}" TextColor="White" />
-                                                </StackLayout>
-
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="*" />
-                                                    </Grid.RowDefinitions>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="80" />
-                                                        <ColumnDefinition Width="*" />
-                                                    </Grid.ColumnDefinitions>
-
-                                                    <Label Text="Описание: " TextColor="White" FontAttributes="Bold" />
-                                                    <Label Grid.Column="1" Text="{Binding description}"
-                                                           TextColor="White" />
-                                                </Grid>
-
-                                                <Label Text="{Binding date}" TextColor="#ccE7EAEF"
-                                                       HorizontalOptions="End" />
-                                            </StackLayout>
-                                        </Frame>
+            <Label x:Name="NoBonusLabel" Text="" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            
+            <CollectionView x:Name="BoughtBonuses">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="entity:BoughtBonusInfo">
+                        <StackLayout Margin="0,0,0,3">
+                            <Frame BackgroundColor="White">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                    
+                                    <Label Text="{Binding Description}" TextColor="Black" FontSize="14"/>
                                     </StackLayout>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </StackLayout>
-
-                </StackLayout>
-            </Frame>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </StackLayout>
 

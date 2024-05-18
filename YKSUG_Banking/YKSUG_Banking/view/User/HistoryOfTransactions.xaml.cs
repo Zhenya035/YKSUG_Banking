@@ -2,20 +2,19 @@
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.servises;
 
-namespace YKSUG_Banking.view.Admin
+namespace YKSUG_Banking.view.User
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AllBonuses : ContentPage
+    public partial class HistoryOfTransactions : ContentPage
     {
-        public AllBonuses()
+        public HistoryOfTransactions()
         {
             InitializeComponent();
         }
 
         protected override async void OnAppearing()
         {
-            BonusesTemplate.ItemsSource = await Requests.ShowAllBonuses();
-
+            ServicesTemplate.ItemsSource = await Requests.ShowLastServices();
             base.OnAppearing();
         }
     }

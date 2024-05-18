@@ -62,53 +62,17 @@ namespace YKSUG_Banking.view
                 }
             }
         }
-
-        private async void AutoAuthentication(AuthenticationRequest request)
-        {
-            MainPage.authResponse = await Requests.SendLogin(request);
-
-            if (MainPage.authResponse.Token.Contains("false"))
-            {
-                await DisplayAlert("ERROR", "Неверные данные", "ОК");
-            }
-            else
-            {
-                if (MainPage.authResponse.Role == "USER")
-                {
-                    MainPage.account = await Requests.GetAccount(request.Username,
-                        MainPage.authResponse.Token);
-
-                    var tmpCardNumber = new StringBuilder("");
-
-                    for (var i = 0; i < 4; i++)
-                    {
-                        for (var j = 0; j < 4; j++) tmpCardNumber.Append(MainPage.account.Card.CardNumber[4 * i + j]);
-
-                        tmpCardNumber.Append(" ");
-                    }
-
-                    MainPage.prettyCardNumber = tmpCardNumber.ToString();
-
-                    await Shell.Current.GoToAsync("//UserMain");
-
-                    Shell.SetTabBarIsVisible(this, true);
-                }
-            }
-        }
-
         protected override async void OnAppearing()
         {
             Shell.SetTabBarIsVisible(this, false);
             LoginButton.IsEnabled = true;
-            
             var request = await AuthRequestHandler.LoadAuthData();
             if (request != null)
             {
                 UserNameField.Text = request.Username;
                 PasswordField.Text = request.Password;
-
-                //AutoAuthentication(request);
             }
+            
 
             base.OnAppearing();
         }

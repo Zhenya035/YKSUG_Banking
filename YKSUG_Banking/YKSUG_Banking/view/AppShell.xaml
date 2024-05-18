@@ -7,23 +7,22 @@
        xmlns:view="clr-namespace:YKSUG_Banking.view;assembly=YKSUG_Banking"
        xmlns:admin="clr-namespace:YKSUG_Banking.view.Admin;assembly=YKSUG_Banking"
        x:Class="YKSUG_Banking.view.AppShell"
-       Shell.NavBarIsVisible="False">
+       Shell.NavBarIsVisible="False"
+       Shell.TabBarBackgroundColor="#5796E4"
+       Shell.TabBarTitleColor="Black">
 
     <TabBar Route="LoginPage">
         <ShellContent Title="LoginPage" Icon="MainPage.png" ContentTemplate="{DataTemplate view:LoginPage}"
                       IsVisible="True" />
     </TabBar>
 
-    <TabBar Route="UserMain" IsVisible="True">
-
+    <TabBar Route="UserMain" IsVisible="True" >
         <ShellContent Route="MainPage" Title="MainPage" Icon="MainPage.png"
-                      ContentTemplate="{DataTemplate yksugBanking:MainPage}" />
+                      ContentTemplate="{DataTemplate yksugBanking:MainPage}"/>
+        
+        <ShellContent Title="History" Icon="HistoryLogo.png" ContentTemplate="{DataTemplate user:HistoryOfTransactions}" />
 
-        <ShellContent Title="Transaction" Icon="transaction.png" ContentTemplate="{DataTemplate user:Transaction}" />
-
-        <ShellContent Title="Bonuses" Icon="Services.png" ContentTemplate="{DataTemplate user:Bonuses}" />
-
-        <ShellContent Title="Settings" Icon="SettingsLogo.png" ContentTemplate="{DataTemplate view:Settings}" />
+        <ShellContent Title="Bonuses" Icon="BonusLogo.png" ContentTemplate="{DataTemplate user:Bonuses}" />
     </TabBar>
 
     <TabBar Route="AdminMain" IsVisible="True">

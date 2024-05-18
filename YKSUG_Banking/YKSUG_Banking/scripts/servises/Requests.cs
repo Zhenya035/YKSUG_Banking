@@ -11,7 +11,7 @@ namespace YKSUG_Banking.scripts.servises
 {
     public static class Requests
     {
-        const string ServerName = "https://yksug-banking-system.onrender.com";
+        const string ServerName = "https://liceumserver.onrender.com";
         
         public static async Task<AuthenticationResponse> SendLogin(AuthenticationRequest request)
         {

@@ -6,11 +6,7 @@
              x:Class="YKSUG_Banking.view.Admin.AllBonuses">
 
     <StackLayout>
-        <Button Text="Создать бонус" Clicked="AddBonus" />
-
-        <CollectionView x:Name="BonusesTemplate"
-                        SelectionMode="Single"
-                        SelectionChanged="EditBonus">
+        <CollectionView x:Name="BonusesTemplate">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:BonusMainData">
                     <StackLayout Margin="0,0,0,20">
