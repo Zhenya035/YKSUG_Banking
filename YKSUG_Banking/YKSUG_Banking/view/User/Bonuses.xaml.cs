@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
@@ -15,15 +16,19 @@ namespace YKSUG_Banking.view.User
             InitializeComponent();
         }
 
+        private List<BonusMainData> bonuses;
+        
         protected override async void OnAppearing()
         {
-            var bonuses = await Requests.ShowAllBonuses();
+            bonuses = await Requests.ShowAllBonuses();
             if (bonuses.Count == 0)
             {
                 NoBonusLabel.IsVisible = true;
+                SearchBonusBar.IsVisible = false;
             }
             else
             {
+                SearchBonusBar.IsVisible = true;
                 NoBonusLabel.IsVisible = false;
             }
             
@@ -61,6 +66,27 @@ namespace YKSUG_Banking.view.User
                 await DisplayAlert("Успешно", "Бонус куплен", "Ок");
                 OnAppearing();
             }
+        }
+
+        private void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchBar searchBar = (SearchBar)sender;
+            BonusesTemplate.ItemsSource = Find(searchBar.Text);
+        }
+        
+        private List<BonusMainData> Find(string str)
+        {
+            List<BonusMainData> findingList = new List<BonusMainData>();
+
+            for (var i = 0; i < bonuses.Count; i++)
+            {
+                if (bonuses[i].name.ToLower().Contains(str.ToLower()))
+                {
+                    findingList.Add(bonuses[i]);
+                }
+            }
+            
+            return findingList;
         }
     }
 }

@@ -8,15 +8,15 @@
     
             <StackLayout>
 
-                <StackLayout>
+                <StackLayout Margin="0,6,0,0">
                     <CollectionView x:Name="ServicesTemplate">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="entity:TransactionMainInfo">
-                                <StackLayout Margin="0,0,0,3">
-                                    <Frame>
+                                <StackLayout Margin="0,3,0,3">
+                                    <Frame BorderColor="#5796E4" Margin="15, 0" CornerRadius="10">
                                         <StackLayout>
                                            
-                                           <Label Text="{Binding amount}" TextColor="Black" FontSize="20"/>
+                                           <Label Text="{Binding amount}" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
 
                                            <Label Grid.Column="1" Text="{Binding description}"
                                                    TextColor="Black" FontSize="14"/>

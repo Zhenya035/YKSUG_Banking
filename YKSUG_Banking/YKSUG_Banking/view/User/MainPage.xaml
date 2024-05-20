@@ -23,10 +23,10 @@
             <CollectionView x:Name="BoughtBonuses">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="entity:BoughtBonusInfo">
-                        <StackLayout Margin="0,0,0,3">
-                            <Frame BackgroundColor="White">
+                        <StackLayout Margin="0,3,0,3">
+                            <Frame BackgroundColor="White" BorderColor="#5796E4" Margin="15, 0" CornerRadius="10">
                                 <StackLayout>
-                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
                                     
                                     <Label Text="{Binding Description}" TextColor="Black" FontSize="14"/>
                                     </StackLayout>
