@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YKSUG_Banking.scripts.entity;
@@ -37,16 +39,15 @@ namespace YKSUG_Banking.view.User
             base.OnAppearing();
         }
 
-        private async void BuyBonus(object sender, SelectionChangedEventArgs e)
+        private async void BuyBonus(BonusMainData bonus, Frame frame)
         {
             var responce = await DisplayAlert("Покупка", "Хотите купить этот бонус?", "Да", "Нет");
-
+            
             if (!responce)
             {
+                
                 return;
             }
-            
-            var bonus = e.CurrentSelection[0] as BonusMainData;
 
             var buingBonus = new BuyBonusRequest();
             buingBonus.BonusName = bonus.name;
@@ -60,6 +61,7 @@ namespace YKSUG_Banking.view.User
                 for (var i = 7; i < response.Token.Length - 1; ++i) error.Append(response.Token[i]);
 
                 await DisplayAlert("Ошибка", error.ToString(), "Ок");
+                BonusesTemplate.ItemsSource = bonuses;
             }
             else
             {
@@ -87,6 +89,16 @@ namespace YKSUG_Banking.view.User
             }
             
             return findingList;
+        }
+
+        private async void OnFrameTapped(object sender, EventArgs e)
+        {
+            Frame frame = (Frame)sender;
+            frame.Scale = 0.95;
+            BonusMainData bonus = (BonusMainData)frame.BindingContext;
+            BuyBonus(bonus, frame);
+            await Task.Delay(100);
+            frame.Scale = 1;
         }
     }
 }

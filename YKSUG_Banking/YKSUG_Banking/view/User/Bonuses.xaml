@@ -11,13 +11,14 @@
         
         <SearchBar x:Name="SearchBonusBar" Placeholder="Поиск" TextChanged="OnTextChanged" IsVisible="True"/>
         
-        <CollectionView x:Name="BonusesTemplate"
-                        SelectionMode="Single"
-                        SelectionChanged="BuyBonus">
+        <CollectionView x:Name="BonusesTemplate">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:BonusMainData">
                     <StackLayout Margin="0,3,0,3">
                         <Frame BorderColor="#5796E4" Margin="15, 0" CornerRadius="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFrameTapped" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
                             <StackLayout>
 
                                 <Grid>
