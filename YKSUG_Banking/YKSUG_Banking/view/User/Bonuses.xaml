@@ -26,12 +26,13 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.32*" />
+                                        <ColumnDefinition Width="0.68*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Название: " TextColor="Black" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding name}" TextColor="Black" />
+                                    <Label Text="Название: "   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding name}"   
+           HorizontalTextAlignment="Start"/>
                                 </Grid>
 
                                 <Grid>
@@ -39,12 +40,12 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.32*" />
+                                        <ColumnDefinition Width="0.68*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Описание:" TextColor="Black" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding description}" TextColor="Black"/>
+                                    <Label Text="Описание:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding description}"   />
                                 </Grid>
 
                                 <Grid>
@@ -52,12 +53,12 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.19*" />
+                                        <ColumnDefinition Width="0.81*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Цена:" TextColor="Black" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding price}" TextColor="Black" />
+                                    <Label Text="Цена:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding price}"   />
                                 </Grid>
 
                                 <Grid>
@@ -65,12 +66,12 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="85" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.38*" />
+                                        <ColumnDefinition Width="0.62*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Количество:" TextColor="Black" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding amount}" TextColor="Black" />
+                                    <Label Text="Количество:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding amount}"   />
                                 </Grid>
 
                             </StackLayout>

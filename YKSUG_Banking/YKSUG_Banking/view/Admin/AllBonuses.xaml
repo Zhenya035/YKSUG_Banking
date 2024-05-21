@@ -18,8 +18,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.18*" />
-                                        <ColumnDefinition Width="0.82*" />
+                                        <ColumnDefinition Width="0.30*" />
+                                        <ColumnDefinition Width="0.7*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Название: "   FontAttributes="Bold" />
@@ -32,8 +32,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.18*" />
-                                        <ColumnDefinition Width="0.82*" />
+                                        <ColumnDefinition Width="0.30*" />
+                                        <ColumnDefinition Width="0.7*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Описание:"   FontAttributes="Bold" />
@@ -45,8 +45,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.10*" />
-                                        <ColumnDefinition Width="0.90*" />
+                                        <ColumnDefinition Width="0.17*" />
+                                        <ColumnDefinition Width="0.83*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Цена:"   FontAttributes="Bold" />
@@ -58,8 +58,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.22*" />
-                                        <ColumnDefinition Width="0.78*" />
+                                        <ColumnDefinition Width="0.35*" />
+                                        <ColumnDefinition Width="0.65*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Количество:"   FontAttributes="Bold" />

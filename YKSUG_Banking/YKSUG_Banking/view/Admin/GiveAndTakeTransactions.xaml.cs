@@ -79,11 +79,6 @@ namespace YKSUG_Banking.view.Admin
             base.OnAppearing();
         }
 
-        private void Check(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CheckBonus(accounnt));
-        }
-
         private void GiveBonus(object sender, EventArgs e)
         {
             throw new NotImplementedException();
