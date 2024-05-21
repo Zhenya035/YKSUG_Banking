@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using YKSUG_Banking.scripts.entity;
 using YKSUG_Banking.scripts.servises;
@@ -14,10 +16,14 @@ namespace YKSUG_Banking.view.Admin
             InitializeComponent();
         }
 
-        private async void CreateTransaction(object sender, SelectionChangedEventArgs e)
+        private async void OnFrameTapped(object sender, EventArgs e)
         {
-            var account = e.CurrentSelection[0] as AccountMainInfo;
+            Frame frame = (Frame)sender;
+            frame.Scale = 0.95;
+            var account = frame.BindingContext as AccountMainInfo;
             await Navigation.PushAsync(new GiveAndTakeTransactions(account));
+            await Task.Delay(100);
+            frame.Scale = 1;
         }
 
         protected override async void OnAppearing()

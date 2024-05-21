@@ -12,7 +12,7 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="entity:BoughtBonusInfo">
                                 <StackLayout Margin="0,0,0,20">
-                                    <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7">
+                                    <Frame CornerRadius="20" Padding="7">
                                         <StackLayout>
 
                                             <Grid>

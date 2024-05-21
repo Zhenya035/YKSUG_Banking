@@ -8,14 +8,14 @@
     <StackLayout>
         <SearchBar Placeholder="Поиск" TextChanged="OnTextChanged"/>
 
-        <CollectionView x:Name="Users"
-                        SelectionMode="Single"
-                        SelectionChanged="CreateTransaction">
+        <CollectionView x:Name="Users">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:AccountMainInfo">
                     <StackLayout Margin="0,0,0,0">
-                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" 
-                               Padding="9"  Margin="5">
+                        <Frame CornerRadius="20" Padding="9"  Margin="5">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFrameTapped" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
                             <StackLayout>
 
                                 <Grid>
@@ -27,8 +27,8 @@
                                         <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Имя:" TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding Username}" TextColor="White" />
+                                    <Label Text="Имя:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding Username}"   />
                                 </Grid>
 
                                 <Grid>
@@ -40,8 +40,8 @@
                                         <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Номер карты:" TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding Card.CardNumber}" TextColor="White" />
+                                    <Label Text="Номер карты:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding Card.CardNumber}"   />
                                 </Grid>
                             </StackLayout>
                         </Frame>

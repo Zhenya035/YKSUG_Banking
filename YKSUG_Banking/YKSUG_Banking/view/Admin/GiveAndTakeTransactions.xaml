@@ -4,25 +4,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YKSUG_Banking.view.Admin.GiveAndTakeTransactions">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="TextColor" Value="#F8E1B7"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="10,10,15,0"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#59739B"/>
+                <Setter Property="TextColor" Value="#F8E1B7"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <StackLayout>
-        <Frame>
+        <Frame Margin="5" BackgroundColor="#59739B">
             <StackLayout>
-                <Label x:Name="NameLabel" Text="" HorizontalOptions="FillAndExpand"/>
-                <Label x:Name="CardLabel" Text="" HorizontalOptions="FillAndExpand"/>
-                <Label x:Name="MoneyLabel" Text="" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="NameLabel" Text="" FontSize="Large"/>
+                <Label x:Name="CardLabel" Text=""/>
+                <Label x:Name="MoneyLabel" Text=""/>
             </StackLayout>
         </Frame>
 
 
-        <Entry x:Name="MoneyEntry" Text="" Placeholder="Введите сумму" Margin="0, 50,0,0" />
+        <Entry x:Name="MoneyEntry" Text="" Placeholder="Введите сумму"/>
         <Entry x:Name="DescriptionEntry" Text="" Placeholder="Введите описание" />
 
-        <StackLayout Orientation="Horizontal">
-            <Button Text="Дать" Clicked="GiveTransaction" />
-            <Button Text="Забрать" Clicked="TakeTransaction" />
-            <Button Text="Испоьзовать бонус" Clicked="Check"/>
-            <Button Text="Выдать бонус" Clicked="GiveBonus"/>
-        </StackLayout>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Начислить" Clicked="GiveTransaction" Grid.Column="0"/>
+            <Button Text="Списать" Clicked="TakeTransaction" Grid.Column="1"/>
+        </Grid>
+
+        <!--<Button Text="Испоьзовать бонус" Clicked="Check"/>
+        <Button Text="Выдать бонус" Clicked="GiveBonus"/>-->
     </StackLayout>
 
 </ContentPage>

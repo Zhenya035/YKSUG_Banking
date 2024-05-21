@@ -10,8 +10,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:BonusMainData">
                     <StackLayout Margin="0,0,0,20">
-                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" 
-                               Padding="9" Margin="5">
+                        <Frame CornerRadius="20" Padding="9" Margin="5">
                             <StackLayout>
 
                                 <Grid>
@@ -23,8 +22,8 @@
                                         <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Название: " TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding name}" TextColor="White" 
+                                    <Label Text="Название: "   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding name}"   
                                            HorizontalTextAlignment="Start"/>
                                 </Grid>
 
@@ -37,8 +36,8 @@
                                         <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Описание:" TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding description}" TextColor="White" />
+                                    <Label Text="Описание:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding description}"   />
                                 </Grid>
 
                                 <Grid>
@@ -50,8 +49,8 @@
                                         <ColumnDefinition Width="0.90*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Цена:" TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding price}" TextColor="White" />
+                                    <Label Text="Цена:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding price}"   />
                                 </Grid>
 
                                 <Grid>
@@ -63,8 +62,8 @@
                                         <ColumnDefinition Width="0.78*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Text="Количество:" TextColor="White" FontAttributes="Bold" />
-                                    <Label Grid.Column="1" Text="{Binding amount}" TextColor="White" />
+                                    <Label Text="Количество:"   FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding amount}"   />
                                 </Grid>
 
                             </StackLayout>

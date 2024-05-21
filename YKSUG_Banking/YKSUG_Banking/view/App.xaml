@@ -4,6 +4,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YKSUG_Banking.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="#5796E4"/>
+                <Setter Property="Margin" Value="15,0"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
