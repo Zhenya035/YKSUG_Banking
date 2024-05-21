@@ -19,10 +19,13 @@ namespace YKSUG_Banking.view
         {
             var request = new AuthenticationRequest();
 
+            UserNameField.IsEnabled = false;
+            PasswordField.IsEnabled = false;
+
             LoginButton.IsEnabled = false;
 
-            request.Username = UserNameField.Text;
-            request.Password = PasswordField.Text;
+            request.Username = UserNameField.Text.ToString().Trim();
+            request.Password = PasswordField.Text.ToString().Trim();
 
             MainPage.authResponse = await Requests.SendLogin(request);
 
@@ -30,6 +33,8 @@ namespace YKSUG_Banking.view
             {
                 await DisplayAlert("ERROR", "Неверные данные", "ОК");
                 LoginButton.IsEnabled = true;
+                UserNameField.IsEnabled = true;
+                PasswordField.IsEnabled = true;
             }
             else
             {

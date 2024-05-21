@@ -13,8 +13,9 @@
                         SelectionChanged="CreateTransaction">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="entity:AccountMainInfo">
-                    <StackLayout Margin="0,0,0,20">
-                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" Padding="7">
+                    <StackLayout Margin="0,0,0,0">
+                        <Frame CornerRadius="20" BackgroundColor="#ab2C1B47" 
+                               Padding="9"  Margin="5">
                             <StackLayout>
 
                                 <Grid>
@@ -22,8 +23,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="45" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.18*" />
+                                        <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Имя:" TextColor="White" FontAttributes="Bold" />
@@ -35,8 +36,8 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="80" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.18*" />
+                                        <ColumnDefinition Width="0.82*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="Номер карты:" TextColor="White" FontAttributes="Bold" />

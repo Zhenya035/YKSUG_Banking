@@ -5,9 +5,14 @@
              x:Class="YKSUG_Banking.view.Admin.GiveAndTakeTransactions">
 
     <StackLayout>
-        <Label x:Name="NameLabel" Text="" />
-        <Label x:Name="CardLabel" Text="" />
-        <Label x:Name="MoneyLabel" Text="" />
+        <Frame>
+            <StackLayout>
+                <Label x:Name="NameLabel" Text="" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="CardLabel" Text="" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="MoneyLabel" Text="" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Frame>
+
 
         <Entry x:Name="MoneyEntry" Text="" Placeholder="Введите сумму" Margin="0, 50,0,0" />
         <Entry x:Name="DescriptionEntry" Text="" Placeholder="Введите описание" />
