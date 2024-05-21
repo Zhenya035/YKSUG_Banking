@@ -71,6 +71,8 @@ namespace YKSUG_Banking.view
         {
             Shell.SetTabBarIsVisible(this, false);
             LoginButton.IsEnabled = true;
+            UserNameField.IsEnabled = true;
+            PasswordField.IsEnabled = true;
             var request = await AuthRequestHandler.LoadAuthData();
             if (request != null)
             {
